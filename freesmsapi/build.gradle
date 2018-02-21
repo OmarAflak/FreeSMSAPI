@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'freesmsapi'
+
+    publishedGroupId = 'me.aflak.libraries'
+    libraryName = 'Free SMS API'
+    artifact = 'freesmsapi'
+
+    libraryDescription = 'Android library that allows you to communicate simply using a bluetooth connection.'
+
+    siteUrl = 'https://github.com/OmarAflak/FreeSMSAPI'
+    gitUrl = 'https://github.com/OmarAflak/FreeSMSAPI.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'omaflak'
+    developerName = 'Omar Aflak'
+    developerEmail = 'aflakomar@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.2'
+}
+
+apply from: 'https://raw.githubusercontent.com/omaflak/Bintray/master/install.gradle'
+apply from: 'https://raw.githubusercontent.com/omaflak/Bintray/master/bintray.gradle'
