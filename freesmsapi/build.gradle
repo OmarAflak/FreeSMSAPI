@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/OmarAflak/FreeSMSAPI'
     gitUrl = 'https://github.com/OmarAflak/FreeSMSAPI.git'
 
-    libraryVersion = '1.0'
+    libraryVersion = '1.1'
 
     developerId = 'omaflak'
     developerName = 'Omar Aflak'
